@@ -24,3 +24,5 @@ Flags:
   -h, --help        help for dhammapada
   -v, --verse int   Specify a verse number (1-423)
 ```
+
+![demo of the command](demo.gif)

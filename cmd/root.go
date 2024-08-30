@@ -71,7 +71,9 @@ func getVerse(verseNumber int) (string, string, error) {
 var rootCmd = &cobra.Command{
 	Use:   "dhammapada [search]",
 	Short: "A daily dose of the Dharma",
-	Long:  `A random verse from the Dhammapada, translated by F. Max Müller.`,
+	Long:  `Print a verse or verses from the Dhammapada, translated by F. Max Müller.
+	
+By default, a random verse is printed.`,
 	Args:  cobra.MaximumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var searchString string
@@ -105,9 +107,11 @@ func printVerse(verse, chapter string, colour bool) {
 		c.Println(verse)
 		c = color.New(color.FgBlue).Add(color.Italic)
 		c.Println(chapter)
+		fmt.Println()
 	} else {
 		fmt.Println(verse)
 		fmt.Println(chapter)
+		fmt.Println()
 	}
 }
 
